@@ -34,5 +34,11 @@ class TestCalculator(unittest.TestCase):
         with self.assertRaises(ValueError):
             calc.modulo(7, 0)
 
+    def test_power(self):
+        calc = Calculator()
+        self.assertEqual(calc.power(2, 3), 8)
+        self.assertEqual(calc.power(0, 0), 1)
+        self.assertEqual(calc.power(2, -1), 0.5)
+
 if __name__ == "__main__":
     unittest.main()
