@@ -26,5 +26,13 @@ class TestCalculator(unittest.TestCase):
         with self.assertRaises(ValueError):
             calc.divide(7, 0)
 
+    def test_modulo(self):
+        calc = Calculator()
+        self.assertEqual(calc.modulo(7, 3), 1)
+        self.assertEqual(calc.modulo(-7, 3), 2)
+        self.assertEqual(calc.modulo(7, -3), -2)
+        with self.assertRaises(ValueError):
+            calc.modulo(7, 0)
+
 if __name__ == "__main__":
     unittest.main()
